@@ -1,10 +1,12 @@
+// Copyright 2021-2022 dwidge
+
 const log = (...a) =>
 	self.clients.matchAll().then(clients => {
 		clients.forEach(client => client.postMessage(a))
 	})
 
 var scope = self.registration.scope
-var version = '_VERSION_'
+var version = '0'
 var cachePath = scope + version
 var urls = ['', 'index.htm'].map(s => scope + s)
 
